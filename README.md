@@ -89,6 +89,19 @@ This separation prevents revenue logic from leaking into transport logic.
 
 ---
 
+## Scope
+
+This repository does NOT include:
+
+- Frontend implementation
+- Billing UI
+- Stripe production configuration
+- Infrastructure provisioning (Terraform, etc.)
+
+It focuses strictly on backend revenue architecture.
+
+---
+
 ## ⚠️ Philosophy
 
 Revenue is not a feature.
