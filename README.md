@@ -54,6 +54,22 @@ The goal is structural alignment between:
 - Revenue logic
 - Database consistency
 
+### High-Level Flow
+
+Client
+  ↓
+FastAPI (Auth Layer - JWT)
+  ↓
+Subscription Guard (FREE / PRO check)
+  ↓
+Stripe Checkout
+  ↓
+Stripe Webhook
+  ↓
+Subscription State Update (DB)
+  ↓
+Protected Endpoint returns 200
+
 ---
 
 ## ⚠️ Philosophy
