@@ -87,6 +87,8 @@ Each layer can fail independently — and must be verifiable independently.
 
 This separation prevents revenue logic from leaking into transport logic.
 
+---
+
 ## ⚠️ Philosophy
 
 Revenue is not a feature.
