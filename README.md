@@ -1,4 +1,7 @@
 # FastAPI Revenue Core
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
+![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=flat&logo=stripe&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 Production-ready Subscription & Monetization Engine built with FastAPI, Stripe and Docker.
 
@@ -36,6 +39,20 @@ This repository focuses on real-world monetization flows — not tutorials.
 - Stripe API (Test Mode)
 - PostgreSQL
 - Docker
+
+---
+
+## 🏗 Architecture
+
+Detailed architecture diagram will be added as implementation progresses.
+
+The goal is structural alignment between:
+
+- Authentication layer
+- Subscription state
+- Stripe webhook verification
+- Revenue logic
+- Database consistency
 
 ---
 
