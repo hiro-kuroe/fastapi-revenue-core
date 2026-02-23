@@ -56,19 +56,21 @@ The goal is structural alignment between:
 
 ### High-Level Flow
 
+```text
 Client
-  ↓
+↓
 FastAPI (Auth Layer - JWT)
-  ↓
+↓
 Subscription Guard (FREE / PRO check)
-  ↓
+↓
 Stripe Checkout
-  ↓
+↓
 Stripe Webhook
-  ↓
+↓
 Subscription State Update (DB)
-  ↓
+↓
 Protected Endpoint returns 200
+```
 
 ---
 
