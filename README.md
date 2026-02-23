@@ -74,6 +74,19 @@ Protected Endpoint returns 200
 
 ---
 
+### Why This Structure
+
+This architecture separates:
+
+- Authentication logic
+- Subscription authorization
+- Payment event processing
+- Database state transitions
+
+Each layer can fail independently — and must be verifiable independently.
+
+This separation prevents revenue logic from leaking into transport logic.
+
 ## ⚠️ Philosophy
 
 Revenue is not a feature.
