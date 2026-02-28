@@ -116,7 +116,10 @@ This ensures database state and runtime authorization remain aligned.
 
 ```
 
-Expiration rule:  If current_period_end <= now  → Access returns 403  → subscription_status is updated to EXPIRED
+Expiration rule:  
+If current_period_end <= now  
+→ Access returns 403  
+→ subscription_status is updated to EXPIRED
 
 ---
 
