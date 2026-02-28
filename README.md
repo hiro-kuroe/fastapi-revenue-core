@@ -100,6 +100,26 @@ When a user with PRO or CANCELED reaches the expiration date:
 
 This ensures database state and runtime authorization remain aligned.
 
+## 🔄 Subscription State Transition
+
+```text
+                grant
+   FREE  ─────────────────▶  PRO
+                               │
+                               │ cancel
+                               ▼
+                           CANCELED
+                               │
+                               │ expiration reached
+                               ▼
+                            EXPIRED
+
+Expiration rule:
+If current_period_end <= now
+→ Access returns 403
+→ subscription_status is updated to EXPIRED
+
+---
 ---
 
 ### Why This Structure
