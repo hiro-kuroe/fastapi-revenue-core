@@ -114,7 +114,7 @@ This ensures database state and runtime authorization remain aligned.
                                ▼
                             EXPIRED
 
----
+```
 
 Expiration rule:
 If current_period_end <= now
