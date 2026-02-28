@@ -70,7 +70,35 @@ FastAPI (Auth Layer - JWT)
           Subscription State Update (DB)
   ↓
 Protected Endpoint returns 200
+
 ```
+
+## 🔄 Subscription State Engine (Implemented)
+
+The subscription engine is time-based.
+
+### States (Database)
+- FREE
+- PRO
+- CANCELED
+- EXPIRED
+
+### Truth Source
+
+Access control is determined by:
+
+current_period_end > now
+
+Status alone does not grant access.
+
+### Automatic Expiration
+
+When a user with PRO or CANCELED reaches the expiration date:
+
+- Access returns 403
+- subscription_status is automatically updated to EXPIRED
+
+This ensures database state and runtime authorization remain aligned.
 
 ---
 
