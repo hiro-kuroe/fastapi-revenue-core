@@ -80,6 +80,8 @@ Protected Endpoint returns 200
 
 ```
 
+---
+
 ## 🔄 Subscription State Engine (Implemented)
 
 The subscription engine is time-based.
