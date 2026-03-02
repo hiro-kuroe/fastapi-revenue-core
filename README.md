@@ -7,6 +7,7 @@ Production-ready FastAPI backend for subscription-based SaaS products.
 
 Includes working Stripe Checkout, verified Webhook processing,
 time-based access control, and automatic expiration handling.
+
 ---
 
 ## 🚀 What This Is
@@ -29,14 +30,14 @@ This repository focuses on real-world monetization flows — not tutorials.
 
 FREE user → GET /stripe/pro-content → 403
 
-After successful Stripe Checkout:
-Webhook (invoice.payment_succeeded) received
-DB updated: FREE → PRO
-GET /stripe/pro-content → 200
+After successful Stripe Checkout:  
+- Webhook (invoice.payment_succeeded) received  
+- DB updated: FREE → PRO  
+- GET /stripe/pro-content → 200
 
-When current_period_end <= now:
-GET /stripe/pro-content → 403
-subscription_status auto-updated → EXPIRED
+When current_period_end <= now:  
+- GET /stripe/pro-content → 403  
+- subscription_status auto-updated → EXPIRED
 
 ---
 
@@ -51,12 +52,14 @@ subscription_status auto-updated → EXPIRED
 
 ## 🧠 Structural Design (Implemented)
 
-Layer 1: Authentication (JWT)
-Layer 2: Subscription Guard (service-level enforcement)
-Layer 3: Stripe Event Processing (Webhook + Idempotency)
+Layer 1: Authentication (JWT)  
+Layer 2: Subscription Guard (service-level enforcement)  
+Layer 3: Stripe Event Processing (Webhook + Idempotency)  
 Layer 4: Database State Engine (time-based truth source)
 
 Each layer is isolated and testable.
+
+---
 
 ### High-Level Flow
 
@@ -103,6 +106,8 @@ When a user with PRO or CANCELED reaches the expiration date:
 - subscription_status is automatically updated to EXPIRED
 
 This ensures database state and runtime authorization remain aligned.
+
+```
 
 ## 🔄 Subscription State Transition
 
@@ -175,3 +180,9 @@ Revenue is not a feature.
 It is infrastructure.
 
 This project demonstrates how subscription logic, authentication, and payment verification should align structurally.
+
+---
+
+This repository is intended for engineers who need a structurally sound subscription backend foundation — not a tutorial.
+
+It is built to be read, inspected, and adapted for production systems.
