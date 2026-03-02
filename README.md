@@ -3,8 +3,10 @@
 ![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=flat&logo=stripe&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-Production-ready Subscription & Monetization Engine built with FastAPI, Stripe and Docker.
+Production-ready FastAPI backend for subscription-based SaaS products.
 
+Includes working Stripe Checkout, verified Webhook processing,
+time-based access control, and automatic expiration handling.
 ---
 
 ## 🚀 What This Is
@@ -23,13 +25,18 @@ This repository focuses on real-world monetization flows — not tutorials.
 
 ---
 
-## 💳 Demo Flow
+## 🔍 Verified Runtime Behavior
 
-1. FREE user hits protected endpoint → `403`
-2. Stripe Checkout session completes
-3. Webhook verified
-4. Subscription state updates (FREE → PRO)
-5. Same endpoint → `200`
+FREE user → GET /stripe/pro-content → 403
+
+After successful Stripe Checkout:
+Webhook (invoice.payment_succeeded) received
+DB updated: FREE → PRO
+GET /stripe/pro-content → 200
+
+When current_period_end <= now:
+GET /stripe/pro-content → 403
+subscription_status auto-updated → EXPIRED
 
 ---
 
@@ -42,17 +49,14 @@ This repository focuses on real-world monetization flows — not tutorials.
 
 ---
 
-## 🏗 Architecture
+## 🧠 Structural Design (Implemented)
 
-Detailed architecture diagram will be added as implementation progresses.
+Layer 1: Authentication (JWT)
+Layer 2: Subscription Guard (service-level enforcement)
+Layer 3: Stripe Event Processing (Webhook + Idempotency)
+Layer 4: Database State Engine (time-based truth source)
 
-The goal is structural alignment between:
-
-- Authentication layer
-- Subscription state
-- Stripe webhook verification
-- Revenue logic
-- Database consistency
+Each layer is isolated and testable.
 
 ### High-Level Flow
 
@@ -148,6 +152,20 @@ This repository does NOT include:
 - Infrastructure provisioning (Terraform, etc.)
 
 It focuses strictly on backend revenue architecture.
+
+---
+
+## 🔧 Operational Readiness
+
+Designed to prevent:
+
+- Subscription state drift
+- Time-zone based access bugs
+- Webhook replay issues
+- Authorization inconsistencies
+
+Revenue logic must fail safely.
+This repository enforces that principle.
 
 ---
 
