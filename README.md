@@ -142,7 +142,7 @@ This architecture separates:
 
 - Authentication logic
 - Subscription authorization
-- Stripi event processing
+- Stripe event processing
 - Database state transitions
 
 Each layer can fail independently — and must be verifiable independently.
