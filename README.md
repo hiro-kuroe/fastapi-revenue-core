@@ -193,10 +193,10 @@ It is built to be read, inspected, and adapted for production systems.
 
 ---
 
-## Run Locally
+## ⚙️ Run Locally
 
 ```bash
-git clone https://github.com/yourname/fastapi-revenue-core
+git clone https://github.com/hiro-kuroe/fastapi-revenue-core
 
 cd fastapi-revenue-core
 
