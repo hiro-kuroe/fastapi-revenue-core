@@ -190,3 +190,16 @@ This project demonstrates how subscription logic, authentication, and payment ve
 This repository is intended for engineers who need a structurally sound subscription backend foundation — not a tutorial.
 
 It is built to be read, inspected, and adapted for production systems.
+
+---
+
+## Run Locally
+
+```bash
+git clone https://github.com/yourname/fastapi-revenue-core
+cd fastapi-revenue-core
+
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload
+```
