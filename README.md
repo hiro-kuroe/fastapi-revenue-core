@@ -197,6 +197,7 @@ It is built to be read, inspected, and adapted for production systems.
 
 ```bash
 git clone https://github.com/yourname/fastapi-revenue-core
+
 cd fastapi-revenue-core
 
 pip install -r requirements.txt
