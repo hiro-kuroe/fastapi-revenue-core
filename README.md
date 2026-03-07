@@ -45,7 +45,8 @@ When current_period_end <= now:
 
 - FastAPI
 - Stripe API (Test Mode)
-- PostgreSQL
+- SQLAlchemy
+- SQLite
 - Docker
 
 ---
@@ -105,7 +106,8 @@ Status alone does not grant access.
 When a user with PRO or CANCELED reaches the expiration date:
 
 - Access returns 403
-- subscription_status is automatically updated to EXPIRED
+- Access is denied when current_period_end <= now.
+  The expiration rule is enforced at the API guard layer.
 
 This ensures database state and runtime authorization remain aligned.
 
@@ -140,7 +142,7 @@ This architecture separates:
 
 - Authentication logic
 - Subscription authorization
-- Payment event processing
+- Stripi event processing
 - Database state transitions
 
 Each layer can fail independently — and must be verifiable independently.
