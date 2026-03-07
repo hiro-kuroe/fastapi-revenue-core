@@ -37,7 +37,7 @@ After successful Stripe Checkout:
 
 When current_period_end <= now:  
 - GET /stripe/pro-content → 403  
-- subscription_status auto-updated → EXPIRED
+- Access denied by subscription guard
 
 ---
 
