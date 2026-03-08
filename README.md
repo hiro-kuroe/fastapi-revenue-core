@@ -26,6 +26,20 @@ This repository focuses on real-world monetization flows — not tutorials.
 
 ---
 
+## Need help with Stripe or FastAPI?
+
+If you are experiencing issues with:
+
+- Stripe webhook
+- subscription state sync
+- Stripe Checkout integration
+
+please submit the incident intake form below.
+
+👉 **[Stripe / FastAPI Incident Intake Form](./Intake.md)**
+
+---
+
 ## 🔍 Verified Runtime Behavior
 
 FREE user → GET /stripe/pro-content → 403
@@ -204,3 +218,4 @@ pip install -r requirements.txt
 
 uvicorn app.main:app --reload
 ```
+
