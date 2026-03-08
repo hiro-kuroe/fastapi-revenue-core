@@ -111,7 +111,7 @@ Paste code or repository link
 
 ## 9. Urgency
 
-- [ ] Urgent (within 24 hours)
+- [ ] Urgent 
 - [ ] This week
 - [ ] Not urgent
 
