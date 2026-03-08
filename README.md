@@ -36,7 +36,7 @@ If you are experiencing issues with:
 
 please submit the incident intake form below.
 
-👉 **[Stripe / FastAPI Incident Intake Form](./Intake.md)**  
+👉 **[Stripe / FastAPI Incident Intake Form](./Intake-en.md)**  
 
 You can also contact me directly:  
 
