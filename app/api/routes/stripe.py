@@ -65,6 +65,8 @@ async def stripe_webhook(
         print("DEBUG metadata:", session.get("metadata"))
         print("DEBUG session:", session)
 
+        print("DB users:", db.query(User.email).all()) 
+
         email = session.get("metadata", {}).get("email")
 
         if not email:
