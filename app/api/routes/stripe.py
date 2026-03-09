@@ -200,6 +200,9 @@ def create_checkout_session(
         }],
         success_url="http://localhost:8000/success",
         cancel_url="http://localhost:8000/cancel",
+        metadata={
+            "email": current_user.email
+        }
     )
 
     return{"url": session.url}
