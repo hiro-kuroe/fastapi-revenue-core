@@ -62,6 +62,9 @@ async def stripe_webhook(
 
         session = event["data"]["object"]
 
+        print("DEBUG metadata:", session.get("metadata"))
+        print("DEBUG session:", session)
+
         email = session.get("metadata", {}).get("email")
 
         if not email:
