@@ -62,6 +62,18 @@ async def stripe_webhook(
 
         session = event["data"]["object"]
 
+        email = session.get("metadata", {}).get("email")
+
+        if not email:
+            log("⚠️ email metadata missing")
+            return {"status": "ignored"}
+
+        user = db.query(User).filter(User.email == email).first()
+
+        if not user:
+            log("⚠️ user not found")
+            return {"status": "ignored"}
+
         subscription_id = session.get("subscription")
         customer_id = session.get("customer")
 
